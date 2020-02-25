@@ -1,0 +1,6 @@
+*.sas 
+*.csv
+*.ipynb_checkpoints
+**/UNT Shapefile
+**/Data
+

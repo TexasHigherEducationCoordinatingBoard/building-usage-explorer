@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="Resources/texasicon.png" type="image/x-ico" sizes="16x16">
+  <meta name="viewport" content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <title>UNT Fall 2019</title>
+  <!-- Add Mapbox libraries -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+  <!-- <link href='css/styles.css' rel='stylesheet' /> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="resources/style.css">
+  <link rel="stylesheet" href="resources/slider.css">
+  <script src='geojson/UNT_Monday.js'></script>
+  <script src='geojson/UNT_Tuesday.js'></script>
+  <script src='geojson/UNT_Wednesday.js'></script>
+  <script src='geojson/UNT_Thursday.js'></script>
+  <script src='geojson/UNT_Friday.js'></script>
+  <script src='geojson/UNT_Saturday.js'></script>
+  </link>
+</head>
+
+<body>
+  <div id='map'></div>
+  <div class='map-overlay top'>
+      <div class='map-overlay-inner'>
+    <h2>Hourly Enrollment by Campus Building</h2>
+    <p>Data: UNT: CBM005, CBM014, Fall 2019</p>
+
+    
+    <div class="weekDays-selector">
+      <input type="checkbox" checked="true" id="monday" class="weekday" onclick="clearSelected(this.id);"/>
+      <label for="monday">Mon</label>
+      <input type="checkbox" id="tuesday" class="weekday" onclick="clearSelected(this.id);"/>
+      <label for="tuesday">Tue</label>
+      <input type="checkbox" id="wednesday" class="weekday" onclick="clearSelected(this.id);"/>
+      <label for="wednesday">Wed</label>
+      <input type="checkbox" id="thursday" class="weekday" onclick="clearSelected(this.id);"/>
+      <label for="thursday">Thu</label>
+      <input type="checkbox" id="friday" class="weekday" onclick="clearSelected(this.id);"/>
+      <label for="friday">Fri</label>
+      <input type="checkbox" id="saturday" class="weekday" onclick="clearSelected(this.id);"/>
+      <label for="saturday">Sat</label>
+    </div>
+
+ 
+    <h3>Time of Day- <label id='hour'></label></h3>
+    <input id='slider' aria-label="Time selector" type='range' min='0' max='16' step='1' value='1' />
+      </div>
+    <div class='map-overlay-inner'>
+      <div id='legend' class='legend'>
+        <div class='bar'></div>
+        <div>Enrollment (% of building max)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- This will be an example map of Building Inventory with the CBM005 and 014 -->
+  <!-- I got Fall 2018 enrollment counts for UNT -->
+  <script type="text/javascript" src="js/drawMap.js"></script>
+
+</body>
+
+</html>
